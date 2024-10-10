@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React, { useState } from 'react';
+import InvoiceForm from './components/InvoiceForm';
+import { PDFDownloadLink } from '@react-pdf/renderer';
+import InvoiceDocument from './components/Invoice';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    const [invoiceData, setInvoiceData] = useState(null);
+
+    return (
+        <div className="p-4">
+            <InvoiceForm setInvoiceData={setInvoiceData} />
+            {invoiceData && (
+                <PDFDownloadLink
+                    document={<InvoiceDocument data={invoiceData} />}
+                    fileName={`invoice_${invoiceData.invoiceNumber}.pdf`}
+                >
+                    {({ loading }) => (loading ? 'Loading document...' : 'Download Invoice')}
+                </PDFDownloadLink>
+            )}
+        </div>
+    );
+};
 
 export default App;
