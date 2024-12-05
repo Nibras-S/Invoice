@@ -38,16 +38,16 @@ const styles = StyleSheet.create({
     },
     title: {
         textAlign: 'center',
-        fontSize: 26,
+        fontSize: 25,
         fontWeight: '900',
         color: '#fff',
         marginBottom: 10,
     },
     subheading: {
         textAlign: 'center',
-        fontSize: 21,
+        fontSize: 20,
         fontWeight: '900',
-        marginLeft: 100,
+        marginLeft: 150,
         color: '#f0f0f0',
         marginBottom: 10,
     },
@@ -193,7 +193,7 @@ const styles = StyleSheet.create({
 });
 
 const InvoiceDocument = ({ data }) => {
-    const productsPerPage = 11;
+    const productsPerPage = 10;
     
     // Calculate subtotal and total
     const subtotal = data.products.reduce((acc, product) => {
@@ -235,6 +235,10 @@ const InvoiceDocument = ({ data }) => {
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 5 }}>
                             <Text>{data.clientDetails?.address || 'N/A'}</Text>
                             <Text>{data.clientDetails?.customerNumber || 'N/A'}</Text>
+                        </View>
+                        <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 5 }}>
+                            <Text>TRN:{data.clientDetails?.trnNumber || 'N/A'}</Text>
+                            
                         </View>
                     </View>
 
