@@ -70,7 +70,7 @@ const InvoiceDocument = ({ data }) => {
             {/* Increasing the page width by defining custom width */}
             <Page size={{ width: 700, height: 842 }} style={styles.page}>
                 {/* Invoice Header */}
-                <Text style={styles.title}>SM AUTO SPARE PARTS</Text>
+                <Text style={styles.title}>SPARE MEC AUTO SPARE PARTS</Text>
                 <Text style={{ textAlign: 'center' }}>Invoice</Text>
 
                 {/* Invoice Number and Date */}
