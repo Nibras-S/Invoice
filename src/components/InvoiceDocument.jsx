@@ -217,7 +217,7 @@ const InvoiceDocument = ({ data }) => {
                     <View style={styles.header}>
                         <Image style={styles.logo} src={logo} />
                         <View>
-                            <Text style={styles.title}>SM AUTO SPARE PARTS</Text>
+                            <Text style={styles.title}>SPARE MEC AUTO SPARE PARTS</Text>
                             <Text style={styles.subheading}>INVOICE TAX</Text>
                         </View>
                         <View style={styles.invoiceInfo}>
