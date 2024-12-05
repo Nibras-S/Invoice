@@ -152,6 +152,17 @@ const InvoiceForm = ({ setInvoiceData }) => {
                                 className="border rounded p-2 mb-4 w-full"
                                 pattern="[+0-9]*"  // Only allow numbers and + symbol
                             />
+                            <Field
+                                type="text" // Using 'text' because TRNs are alphanumeric in some cases
+                                name="trnNumber"
+                                placeholder="Enter TRN Number"
+                                value={values.trnNumber || ''} // Default value is empty
+                                onChange={handleChange}
+                                className="border rounded p-2 mb-4 w-full"
+                                pattern="[0-9]*" // Adjust length to match the expected TRN format
+                                title="Enter a valid 15-digit TRN Number."
+                                required
+                                />
                         </div>
 
                         {/* Manual Invoice Number Input */}
@@ -297,4 +308,3 @@ const InvoiceForm = ({ setInvoiceData }) => {
 };
 
 export default InvoiceForm;
-
